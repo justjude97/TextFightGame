@@ -6,27 +6,26 @@ player::player()
 	reset();
 }
 
+
 void player::reset()
 {
 	if (!inventory.empty())
 	{
 		inventory.clear();
 	}
-	else
-	{
-		inventory = TVector<FString>(0);
-	}
 }
 
-TVector<FString> player::getInventory() const
-{
-	return inventory;
-}
+TVector<FString> player::getInventory() const{ return inventory; }
 
 void player::addValidItem(FString item)
 {
+	//std::cout << item << std::endl;
 	inventory.push_back(item);
-	return;
+	
+	/*
+	if (inventory.empty())
+		std::cout << " uh oh." << std::endl;
+	*/
 }
 
 InvStat player::removeItem(FString item)
@@ -46,3 +45,5 @@ InvStat player::removeItem(FString item)
 
 	return InvStat::Not_Found;
 }
+
+
