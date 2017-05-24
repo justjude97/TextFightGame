@@ -1,8 +1,8 @@
 #pragma once
 
-#include <iostream>;
-#include <string>;
-#include <vector>;
+#include <iostream>
+#include <string>
+#include <vector>
 
 #define TVector std::vector
 using FString = std::string;
@@ -28,6 +28,7 @@ public:
 	void reset();
 	//the player should be able to access their inventory
 	TVector<FString> getInventory() const;
+	
 	//add items to their inventory
 	void addValidItem(FString); //TODO create item class and replace as argument
 
@@ -35,6 +36,6 @@ public:
 	InvStat removeItem(FString);
 
 private:
-	std::vector<std::string> inventory; //TODO make richer template value
+	TVector<FString> inventory; //TODO make richer template value
 
 };
